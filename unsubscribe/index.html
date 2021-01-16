@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        
+        <script>
+            function postForm(){
+              document.user_form.action = "http://localhost:5000/hypesherpa/unsubscribe";
+              document.user_form.method = "POST";
+              document.user_form.submit();
+            }
+          </script>
+      
+          <script type="text/javascript">
+            function submitForm(){
+              if (document.user_form.email.value !== ''){
+                postForm()
+              }else{
+                alert("We need your email to unsubscribe")
+              }
+            }
+          </script>
+
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #00D9FF;">
+                <div class="container">
+                    <a href="/" class="btn btn-default navbar-btn">Home</a>
+                    <a href="/how_it_works" class="btn btn-default navbar-btn">How It Works</a>
+                    <a href="/about" class="btn btn-default navbar-btn">About</a>
+                    <a href="/unsubscribe" class="btn btn-default navbar-btn">Unsubscribe</a>
+                </div>
+            </nav>
+
+            <div style="text-align: center; margin-top: 10%;">
+                <img src="/media/hs2.png" class="rounded mx-auto d-block" style="width: 15%;" alt="...">
+                <h1>Sorry to see you go.</h1>
+                <p style="font-size: large;">Please type your email below, and we'll unsubscribe you from daily hype.</p>
+                <form class="navbar-form" id = "user_form" name='user_form'>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <button type="submit" class="btn btn-default" onclick="submitForm()">Unsubscribe</button>
+                </form>
+            </div>
+            
+        </div>
+    </body>
+</html>
